@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: nginx-pod
+  namespace: default
+  labels:
+    app: nginx
+    environment: dev
+spec:
+  containers:
+    - name: nginx
+      image: nginx:alpine
+      ports:
+      - containerPort: 80
+      

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: crash-pod1
+spec: 
+  containers:
+    - name: crash 
+      image: busybox
+      command: ["sh", "-c", "echo Pod started && sleep 5 && exit 1"]
