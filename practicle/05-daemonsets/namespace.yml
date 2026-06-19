@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: daemonsets
+  labels:
+    learning-track: k8s-zero-to-hero
+    chapter: "05"
+    topic: daemonsets
+    kind: topic
