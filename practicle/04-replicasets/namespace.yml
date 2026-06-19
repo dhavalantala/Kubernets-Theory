@@ -1,0 +1,9 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: replicaset 
+  labels:
+    lerning-track: k8s-zero-to-hero
+    topic: replicaset 
+    kinf: topic
+    
