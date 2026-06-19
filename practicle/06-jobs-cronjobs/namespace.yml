@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jobs-cronjobs
+  labels:
+    learning-track: k8s-zero-to-hero
+    chapter: "06"
+    topic: jobs-cronjobs
+    kind: topic

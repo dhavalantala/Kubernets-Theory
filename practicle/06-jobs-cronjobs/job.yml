@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: report-generator
+  namespace: jobs-cronjobs
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: report
+        image: busybox:1.36
+        command: ["sh", "-c", "echo Generating report...; sleep 5; echo Report complete"]
