@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: db-pv
+  labels: 
+    tier: database
+
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes: 
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain 
+  hostPath:
+    path: /data/db-pv

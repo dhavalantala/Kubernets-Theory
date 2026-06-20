@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-frontend
+  labels:
+    env: dev
+    tier: frontend
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-backend
+  labels:
+    env: dev
+    tier: backend
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-database
+  labels:
+    env: dev
+    tier: database
