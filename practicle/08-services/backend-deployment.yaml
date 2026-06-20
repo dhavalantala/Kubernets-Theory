@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata: 
+  name: backend
+  namespace: dev-backend
+  labels:
+    app: backend
+    tier: backend 
+    env: dev 
+
+spec: 
+  replicas: 5 
+  selector:
+    matchLabels:
+      app: backend 
+  template:
+    metadata:
+      labels:
+        app: backend
+        tier: backend
+        env: dev
+    spec: 
+      containers:
+      - name: backend
+        image: hashicorp/http-echo
+        args:   
+          - "-text=hello from backend pod"
+        ports:
+        - containerPort: 5678
