@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet 
+metadata:
+  name: db
+  namespace: dev-database
+spec: 
+  serviceName: db-headless
+  replicas: 3 
+  selector: 
+    matchLabels:
+      app: db 
+  template: 
+    metadata:
+      labels:
+        app: db 
+    spec:
+      containers:
+      - name: db 
+        image: hashicorp/http-echo
+        args:
+          - "-text=Hello From $(POD_NAME)"
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        ports:
+        - containerPort: 5678
+        volumeMounts:
+        - name: db-data
+          mountPath: /data
+  volumeClaimTemplates:
+  - metadata: 
+      name: db-data
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      resources:
+        requests:
+          storage: 1Gi
