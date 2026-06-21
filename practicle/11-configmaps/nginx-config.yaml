@@ -1,0 +1,9 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata:
+  name: nginx-conf
+  namespace: dev-backend
+data:
+  message.txt: |
+    Hello from versiob 1 of the config file 
+    
