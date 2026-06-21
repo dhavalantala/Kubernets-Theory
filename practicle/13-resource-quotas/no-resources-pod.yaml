@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: no-resources-pod
+  namespace: dev-backend 
+spec: 
+  containers:
+  - name: app
+    image: busybox
+    command: ["sh", "-c", "sleep 3600"]
