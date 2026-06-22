@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: fake-healthy
+  namespace: dev-backend
+  labels:
+    app: fake-healthy
+
+spec: 
+  containers:
+  - name: app
+    image: busybox 
+    command: ["sh", "-c", "touch /tmp/healthy && sleep 30 && rm /tmp/healthy && sleep 3600"]
+
+    
