@@ -1,8 +1,4 @@
 # 03 — Deployments
-
-> **Video timestamp:** `01:44:00`  
-> **Cluster:** Minikube (local)
-
 ---
 
 ## What is a Deployment?
